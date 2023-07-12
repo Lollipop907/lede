@@ -157,6 +157,17 @@ define U-Boot/sharevdi-h3399pc-rk3399
   USE_RKBIN:=1
 endef
 
+define U-Boot/newland-nl5101a-rk3399
+  BUILD_SUBTARGET:=armv8
+  NAME:=Newland NL-5101A
+  BUILD_DEVICES:= \
+    newland_nl5101a
+  DEPENDS:=+PACKAGE_u-boot-sharevdi-h3399pc-rk3399:arm-trusted-firmware-rk3399
+  PKG_BUILD_DEPENDS:=arm-trusted-firmware-rockchip-vendor
+  ATF:=rk3399_bl31_v1.35.elf
+  USE_RKBIN:=1
+endif
+
 define U-Boot/dilusense-dlfr100-rk3399
   BUILD_SUBTARGET:=armv8
   NAME:=Dilusense DLFR100
@@ -317,6 +328,7 @@ UBOOT_TARGETS := \
   rockpro64-rk3399 \
   rongpin-king3399-rk3399 \
   rocktech-mpc1903-rk3399 \
+  newland-nl5101a-rk3399 \
   dilusense-dlfr100-rk3399 \
   xiaobao-nas-v1-rk3399 \
   nanopi-r2c-rk3328 \
