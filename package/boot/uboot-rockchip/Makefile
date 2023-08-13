@@ -166,7 +166,7 @@ define U-Boot/newland-nl5101a-rk3399
   PKG_BUILD_DEPENDS:=arm-trusted-firmware-rockchip-vendor
   ATF:=rk3399_bl31_v1.35.elf
   USE_RKBIN:=1
-endif
+endef
 
 define U-Boot/dilusense-dlfr100-rk3399
   BUILD_SUBTARGET:=armv8
