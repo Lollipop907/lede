@@ -366,6 +366,16 @@ define Device/mmbox_anas3035
 endef
 TARGET_DEVICES += mmbox_anas3035
 
+define Device/newland_nl5101a
+  DEVICE_VENDOR := Newland
+  DEVICE_MODEL := NL-5101A
+  SOC := rk3399
+  UBOOT_DEVICE_NAME := nl5101a-rk3399
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
+  DEVICE_PACKAGES := -urngd
+endef
+TARGET_DEVICES += newland_nl5101a
+
 define Device/panther_x2
   DEVICE_VENDOR := Panther
   DEVICE_MODEL := X2

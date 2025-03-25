@@ -145,6 +145,13 @@ define U-Boot/nanopi-r4se-rk3399
   USE_RKBIN:=1
 endef
 
+define U-Boot/nl5101a-rk3399
+  $(U-Boot/rk3399/Default)
+  NAME:=Newland NL-5101A
+  BUILD_DEVICES:= \
+    newland_nl5101a
+endef
+
 define U-Boot/rock-pi-4-rk3399
   $(U-Boot/rk3399/Default)
   NAME:=Rock Pi 4
@@ -447,6 +454,7 @@ UBOOT_TARGETS := \
   nanopc-t4-rk3399 \
   nanopi-r4s-rk3399 \
   nanopi-r4se-rk3399 \
+  nl5101a-rk3399 \
   rock-pi-4-rk3399 \
   rockpro64-rk3399 \
   sv901-eaio-rk3399 \
