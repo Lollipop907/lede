@@ -425,8 +425,8 @@ define KernelPackage/phy-realtek
    KCONFIG:=CONFIG_REALTEK_PHY \
     CONFIG_REALTEK_PHY_HWMON=y
    DEPENDS:=+kmod-libphy +kmod-hwmon-core
-   FILES:=$(LINUX_DIR)/drivers/net/phy/realtek.ko@lt6.12 \
-	  $(LINUX_DIR)/drivers/net/phy/realtek/realtek.ko@ge6.12
+   FILES:=$(LINUX_DIR)/drivers/net/phy/realtek.ko@lt6.6 \
+	  $(LINUX_DIR)/drivers/net/phy/realtek/realtek.ko@ge6.6
    AUTOLOAD:=$(call AutoLoad,18,realtek,1)
 endef
 
@@ -595,6 +595,7 @@ define KernelPackage/dsa-rtl8366rb
   DEPENDS:=+kmod-dsa-realtek @!TARGET_x86 @!TARGET_bcm47xx @!TARGET_uml
   KCONFIG:= \
 	CONFIG_NET_DSA_REALTEK_RTL8366RB \
+	CONFIG_NET_DSA_REALTEK_RTL8366RB_LEDS=y \
 	CONFIG_NET_DSA_TAG_RTL4_A
   FILES:= \
 	$(LINUX_DIR)/drivers/net/dsa/realtek/rtl8366.ko \
