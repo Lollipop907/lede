@@ -159,6 +159,13 @@ define U-Boot/rock-4c-plus-rk3399
     radxa_rock-4c-plus
 endef
 
+define U-Boot/nl5101a-rk3399
+  $(U-Boot/rk3399/Default)
+  NAME:=Newland NL-5101A
+  BUILD_DEVICES:= \
+    newland_nl5101a
+endef
+
 define U-Boot/rock-pi-4-rk3399
   $(U-Boot/rk3399/Default)
   NAME:=Rock Pi 4
@@ -308,6 +315,7 @@ define U-Boot/generic-rk3568
     hinlink_opc-h66k \
     hinlink_opc-h68k \
     hinlink_opc-h69k \
+    hinlink_unicombox-v1 \
     lyt_t68m \
     nlnet_xiguapi-v3 \
     seewo_sv21
@@ -531,6 +539,7 @@ UBOOT_TARGETS := \
   nanopi-r4s-rk3399 \
   nanopi-r4se-rk3399 \
   rock-4c-plus-rk3399 \
+  nl5101a-rk3399 \
   rock-pi-4-rk3399 \
   rock-4se-rk3399 \
   rockpro64-rk3399 \

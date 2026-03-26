@@ -377,6 +377,18 @@ define Device/hinlink_opc-ht2
 endef
 TARGET_DEVICES += hinlink_opc-ht2
 
+define Device/hinlink_unicombox-v1
+  DEVICE_VENDOR := HINLINK
+  DEVICE_MODEL := UNICOMBOX V1
+  SOC := rk3568
+  DEVICE_DTS := rockchip/rk3568-unicombox-v1
+  UBOOT_DEVICE_NAME := generic-rk3568
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script vop | pine64-img | gzip | append-metadata
+  DEVICE_PACKAGES := brcmfmac-firmware-43752-sdio kmod-brcmfmac wpad kmod-drm-rockchip \
+  kmod-gpio-button-hotplug kmod-ata-ahci-dwc
+endef
+TARGET_DEVICES += hinlink_unicombox-v1
+
 define Device/lyt_t68m
   DEVICE_VENDOR := LYT
   DEVICE_MODEL := T68M
@@ -407,6 +419,16 @@ define Device/nlnet_xiguapi-v3
   DEVICE_PACKAGES := kmod-hwmon-pwmfan
 endef
 TARGET_DEVICES += nlnet_xiguapi-v3
+
+define Device/newland_nl5101a
+  DEVICE_VENDOR := Newland
+  DEVICE_MODEL := NL-5101A
+  SOC := rk3399
+  UBOOT_DEVICE_NAME := nl5101a-rk3399
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
+  DEVICE_PACKAGES := -urngd
+endef
+TARGET_DEVICES += newland_nl5101a
 
 define Device/panther_x2
   DEVICE_VENDOR := Panther
