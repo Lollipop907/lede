@@ -381,7 +381,7 @@ define Device/hinlink_unicombox-v1
   DEVICE_VENDOR := HINLINK
   DEVICE_MODEL := UNICOMBOX V1
   SOC := rk3568
-  DEVICE_DTS := rockchip/rk3568-unicombox-v1
+  DEVICE_DTS := rk3568-unicombox-v1
   UBOOT_DEVICE_NAME := generic-rk3568
   IMAGE/sysupgrade.img.gz := boot-common | boot-script vop | pine64-img | gzip | append-metadata
   DEVICE_PACKAGES := brcmfmac-firmware-43752-sdio kmod-brcmfmac wpad kmod-drm-rockchip \
